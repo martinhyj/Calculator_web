@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>计算器</title>
+	</head>
+		 <link rel="stylesheet" type="text/css" href="css/calculator.css" />
+   </head>   
+   <div id="description">
+   	计算机简介：1:多元运算；2:如百分数，平方，平方根
+   	<br />
+   	<h4 style="margin-left: 70px;">计算器</h4>
+   </div>
+		<body> 
+		     	<div id="SDiv"> 
+		     	<input type="text" name="io" id="answer" value="" />
+		     	<br/>
+		     	<input type="button" name="" id="" value="%" onclick="operator('percent')" /> 
+		     	<input type="button" name="" id="" value="X²" onclick="operator('pow')" /> 
+		     	<input type="button" name="" id="" value="√️" onclick="operator('sqrt')" /> 
+		     	<input type="button" name="" id="" value="⬅︎" onclick="operator('backspace')" /> <br />
+		     	<input type="button" name="" id="" value="1" onclick="calCulate(this.value)" /> 
+		     	<input type="button" name="" id="" value="2" onclick="calCulate(this.value)" />
+		     	<input type="button" name="" id="" value="3" onclick="calCulate(this.value)" /> 
+		     	<input type="button" name="" id="" value="4" onclick="calCulate(this.value)" /><br />
+		     	<input type="button" name="" id="" value="5" onclick="calCulate(this.value)" /> 
+		     	<input type="button" name="" id="" value="6" onclick="calCulate(this.value)" />
+		     	<input type="button" name="" id="" value="7" onclick="calCulate(this.value)" /> 
+		     	<input type="button" name="" id="" value="8" onclick="calCulate(this.value)" /><br />
+		     	<input type="button" name="" id="" value="9" onclick="calCulate(this.value)" />
+		     	<input type="button" name="" id="" value="0" onclick="calCulate(this.value)" /> 
+		     	<input type="button" name="" id="" value="." onclick="calCulate(this.value)" />
+		     	<input type="button" name="" id="" value="C" onclick="a('')" /><br/> 
+		     	<input type="button" name="" id="" value="+" onclick="calCulate(this.value)" />
+		     	<input type="button" name="" id="" value="-" onclick="calCulate(this.value)" /> 
+		     	<input type="button" name="" id="" value="*" onclick="calCulate(this.value)" /> 
+		     	<input type="button" name="" id="" value="/" onclick="calCulate(this.value)" /><br/> 
+		     	<input type="button" name="" id="equ" value="=" onclick="e()" /> 
+		     	</div> 
+		     	
+		     	<script type="text/javascript">
+		     		input = document.getElementById("answer")
+		     		function calCulate(v) {
+		     			input.value += v 
+		     		} 
+		     		function a(v) {
+		     			input.value = v
+		     		} 
+		     		function e() {
+		     			try { 
+		     				a(eval(input.value)) 
+		     			}
+		     			catch (e) {
+		     				a('Error') 
+		     			}
+		     		}
+		     		function operator(type) {
+		     			switch (type) {
+		     				case "backspace": 
+		     				   var str = input.value;
+		     				   str = (str != "0") ? str : "";
+		     				   str = str.substr(0, str.length - 1);
+		     				   str = (str != "") ? str : "0";
+		     				   input.value = str; 
+		     				   break;
+		     				case "opposite": 
+		     				   input.value = -input.value;
+		     				   break; 
+		     				case "percent": 
+		     				   input.value = input.value / 100;
+		     				   break;
+		     				case "pow": 
+		     				   input.value = Math.pow(input.value, 2);
+		     				   break; 
+		     				case "sqrt":
+		     				   input.value = Math.sqrt(input.value); 
+		     				   break;
+		     			}
+		     			}
+		     		</script>
+		     		
+		     		
+		     </body>	
+</html>

@@ -1,0 +1,28 @@
+#SDiv {
+	text-align: center; 
+	border: solid 1px; 
+	width: 200px; 
+	border-radius: 15px; 
+	background-color: lavenderblush; 
+	} 
+#answer{ 
+	border: solid 1px;
+	width: 150px; 
+	border-radius: 15px;
+	margin: 10px 0; 
+	font-size: 20px; 
+	padding: 0 3px;
+	 }
+	 
+input[type=button] { 
+	border-radius: 15px; 
+	width: 30px; 
+	height: 30px; 
+	margin: 2px; 
+  	font-size: 20px;
+  	 }
+ #equ { 
+ 	width: 150px; 
+  	font-size: 26px; 
+   	padding-bottom: 30px;
+  	 } 
