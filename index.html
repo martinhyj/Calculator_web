@@ -13,6 +13,9 @@
    </div>
 		<body> 
 		     	<div id="SDiv"> 
+		     		<div id="show">
+		     			<div id="show_child"></div>
+		     		</div>
 		     	<input type="text" name="io" id="answer" value="" />
 		     	<br/>
 		     	<input type="button" name="" id="" value="%" onclick="operator('percent')" /> 
@@ -40,20 +43,39 @@
 		     	
 		     	<script type="text/javascript">
 		     		input = document.getElementById("answer")
+		     		show =document.getElementById("show_child")
+		     		//get the input  expression
 		     		function calCulate(v) {
-		     			input.value += v 
+		     			if(input.value=='0' && v=='0'){
+		     				input.value='0'
+		     			}
+		     			else if(input.value=='0' && v!='.'){
+		     				input.value=v
+		     			}
+		     			else
+		     			    input.value += v
 		     		} 
+		     		// free the input
 		     		function a(v) {
 		     			input.value = v
 		     		} 
+		     		//work out the result
 		     		function e() {
 		     			try { 
+		     				if(show.offsetHeight>81){
+		     					t=show.innerHTML.indexOf("=<br>")
+		     					var str=show.innerHTML
+		     					str=str.substr(t+5, str.length)
+		     					show.innerHTML=str
+		     				}
+		     				show.innerHTML+=input.value + "=<br>"
 		     				a(eval(input.value)) 
 		     			}
 		     			catch (e) {
-		     				a('Error') 
+		     				a('error') 
 		     			}
 		     		}
+		     		//kind of operator
 		     		function operator(type) {
 		     			switch (type) {
 		     				case "backspace": 
